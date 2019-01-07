@@ -27,12 +27,12 @@ Q:( 基础项 ) -- #
     return $this->poker;
     }
     
-        public function rand($num=5){
+        public function rand($num=5){//随机取出五张牌
             $this->poker=array_rand($this->poker,$num);
             return $this;
         }
 
-        public function name(){
+        public function name(){//为了方便查看牌名
             foreach ($this->poker as $key=>$value){
                 $res=$value/13;
                 $res2=$value%13;
@@ -93,7 +93,7 @@ Q:( 基础项 ) -- #
             return $this->poker;
         }
 
-        public function sort(){
+        public function sort(){//将牌按照梅方桃黑以及数字由小到大的顺序进行排序
             foreach ($this->poker as $key=>$value){
                 $res=$value/13;
 
@@ -117,4 +117,4 @@ Q:( 基础项 ) -- #
     }
 
     $a=new Poker();
-    print_r($a->rand(5)->sort()->name());
+    print_r($a->rand(5)->sort()->name());//先随机取5张再排序，最后输出排序后的牌及名称
