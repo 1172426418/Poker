@@ -12,20 +12,20 @@ Q:( 基础项 ) -- #
 我们希望用程序模拟 1 副扑克牌随机抽取 5 张，发给某人的过程。
 
 发牌后需要排序：规则是：先按花色，再按点数。花色的大小顺序是：梅花、方块、红心、黑桃。点数的顺序是：2、3、4、…. 10、J、Q、K、A。
-<?php
+    <?php
     class Poker{
-        private $poker;
-        private $xin=array();
-        private $fang=array();
-        private $mei=array();
-        private $hei=array();
-        function __construct($card_count=52){
-            $this->poker=range(0,$card_count-1);
-        }
-        public function poker(){
-            return $this->poker;
-        }
-
+    private $poker;
+    private $xin=array();
+    private $fang=array();
+    private $mei=array();
+    private $hei=array();
+    function __construct($card_count=52){
+    $this->poker=range(0,$card_count-1);
+    }
+    public function poker(){
+    return $this->poker;
+    }
+    
         public function rand($num=5){
             $this->poker=array_rand($this->poker,$num);
             return $this;
